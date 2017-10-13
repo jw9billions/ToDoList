@@ -15,6 +15,6 @@
     }
 
     angular
-        .module('projectName', ['ui.router', 'firebase'])
+        .module('to-do-list', ['ui.router', 'firebase'])
         .config(config);
 })();
