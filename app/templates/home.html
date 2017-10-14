@@ -1,1 +1,15 @@
 <h1>Home Page</h1>
+<section class="hero-content">
+  <h1 class="hero-title">Current Tasks</h1>
+  <button class="new-task">
+    <h4 class="task-btn">New Task</h4>
+  </button>
+</section>
+
+<section class="task-content">
+  <ul class="task-list" ng-repeat="task in home.tasks">
+    <h3>{{ task.title }}</h3>
+    <p>Created: {{ task.createdAt }}
+    <p class="task-description">Description: {{ task.description }}</p>
+  </ul>
+</section>
