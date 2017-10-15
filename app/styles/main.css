@@ -14,6 +14,10 @@ body {
   background-color: lightpink;
 }
 
+.nav-bar {
+    position: absolute;
+    right: 4rem;
+}
 
 .hero-content {
   position: absolute;
@@ -35,6 +39,14 @@ body {
   padding: 0.1rem;
   margin: 1rem;
   background-color: lightblue;
+}
+
+.new-task-header {
+  padding: 1rem 0 1rem 2.5rem;
+}
+
+.new-task-field {
+  padding: 0 0 1rem 2.5rem;
 }
 
 .task-content {
