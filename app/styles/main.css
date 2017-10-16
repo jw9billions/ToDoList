@@ -23,7 +23,7 @@ body {
   position: absolute;
   left: 0;
   top: 6rem;
-  height: 15rem;
+  height: 18rem;
   width: 100%;
   background-color: silver;
 }
@@ -33,11 +33,12 @@ body {
 }
 
 .new-task {
-  position: relative;
-  left: auto;
-  width: 6rem;
-  padding: 0.1rem;
-  margin: 1rem;
+  position: absolute;
+  top: 12rem;
+  left: 0;
+  width: 40%;
+  padding: 0;
+  margin: 0.5rem;
   background-color: lightblue;
 }
 
@@ -47,6 +48,11 @@ body {
 
 .new-task-field {
   padding: 0 0 1rem 2.5rem;
+}
+
+.task-field {
+  margin: 0;
+  width: 60%;
 }
 
 .task-content {
