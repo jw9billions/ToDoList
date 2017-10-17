@@ -18,10 +18,12 @@
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks" ng-hide="taks.expiredTask(taks.createdAt)">
-    <h3>{{ task.title }}</h3>
-    <p>Created: {{ task.createdAt }}
-    <p class="task-description">Description: {{ task.description }}</p>
-    <hr class="task-rules">
+  <div class="task-list" ng-repeat="task in home.tasks">
+    <div ng-show="home.show(task)">
+      <h3><input class="task-checkbox" type="checkbox"> {{ task.title }}</h3>
+      <p>Created: {{ task.created }}
+      <p class="task-description">Description: {{ task.description }}</p>
+      <hr class="task-rules">
+    </div>
   </div>
 </section>
