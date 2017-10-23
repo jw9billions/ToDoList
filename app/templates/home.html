@@ -1,9 +1,5 @@
-<nav class="nav-bar">
-  <h5>Active Tasks | Finished Tasks</h5>
-</nav>
-
 <section class="hero-content">
-  <h1 class="hero-title">Active Tasks</h1>
+  <h1 class="hero-title">Tasks</h1>
 </section>
 
 <section class="new-task">
@@ -19,7 +15,7 @@
 
 <section class="task-content">
   <div class="task-list" ng-repeat="task in home.tasks">
-    <div ng-show="home.show(task)">
+    <div ng-hide="home.hide(task)">
       <h3><input class="task-checkbox" type="checkbox"> {{ task.title }}</h3>
       <p>Created: {{ task.created }}
       <p class="task-description">Description: {{ task.description }}</p>

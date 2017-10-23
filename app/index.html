@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
+    <nav class="nav-bar">
+      <a ui-sref="home">Tasks</a> | <a ui-sref="archive">Archive</a>
+    </nav>
     <ui-view></ui-view>
     <script src='https://momentjs.com/downloads/moment.min.js'></script>
     <!-- Angular -->
@@ -16,6 +19,9 @@
 
     <!-- AngularUI Router -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.min.js"></script>
+
+    <!-- AngularFire -->
+    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
 
     <!-- FireBase -->
     <script src="https://www.gstatic.com/firebasejs/4.5.1/firebase.js"></script>
@@ -32,12 +38,10 @@
       firebase.initializeApp(config);
     </script>
 
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-
     <!-- Application Files -->
     <script src="/scripts/app.js"></script>
     <script src="/scripts/controller/HomeCtrl.js"></script>
+    <script src="scripts/controller/ArchiveCtrl.js"></script>
     <script src="/scripts/services/Task.js"></script>
 </body>
 </html>

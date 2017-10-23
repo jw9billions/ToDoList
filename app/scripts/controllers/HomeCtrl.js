@@ -12,17 +12,11 @@
             title: this.title,
             description: this.description,
             created: moment().dayOfYear(),
-            completed: this.completed
+            completed: false
           });
           this.title = '';
         }
       };
-
-      this.expiredTask = function (created) {
-        if (Date.now() - created) > 604800000 {
-          return true;
-        }
-      }
     }
 
     angular
