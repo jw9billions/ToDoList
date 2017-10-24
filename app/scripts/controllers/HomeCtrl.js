@@ -1,25 +1,36 @@
 (function() {
     function HomeCtrl(Task, $scope) {
       this.tasks = Task.all;
+      this.taskStatus = function (task) {
+        Task.completeTask(task);
+      }
 
       this.hide = function(task) {
         return task.created < (moment().dayOfYear() - 7) || task.completed == true
       };
 
-      this.addTask = function () {
-        if (this.title !== '') {
-          this.task.$add({
-            title: this.title,
-            description: this.description,
-            created: moment().dayOfYear(),
-            completed: false
-          });
-          this.title = '';
+      this.addTask = function (messageTitle, messageDescription, taskPriority) {
+        if (messageTitle) {
+          var newTask = {
+              title: messageTitle,
+              description: messageDescription,
+              priority: taskPriority,
+              created: moment().dayOfYear(),
+              completed: false
+          };
+          Task.addTask(newTask);
         }
       };
+
+      $scope.clearfunction = function(event){
+        event.messageTitle = null;
+        event.messageDescription = null;
+        event.taskPriority = '3';
+      }
     }
+
 
     angular
         .module('to-do-list')
-        .controller('HomeCtrl', [ 'Task', HomeCtrl]);
+        .controller('HomeCtrl', ['Task', '$scope', HomeCtrl]);
 })();

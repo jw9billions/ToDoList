@@ -3,21 +3,27 @@
 </section>
 
 <section class="new-task">
-  <div class="new-task-header">
-    Task Name | Description | Priority
-  </div>
-  <div class="new-task-field" ng-submit="home.addTask()">
-    <input type="text" class="task-field" ng-model="task.title" name="title" value="new Task Name!">
-    <input type="text" class="task-field" ng-model="task.description" value="new Task Description">
-    <input type="submit" class="submit" value="Add Task">
+
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="messageTitle" placeholder="new Task Name!">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="new Task Description">
+    <select class="priority" ng-model="taskPriority">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button class="submit" ng-click="archive.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in archive.tasks">
+  <div class="task-list" ng-repeat="task in archive.tasks | orderBy: 'priority'">
     <div ng-hide="archive.show(task)">
-      <h3 class="archive-title"><input class="task-checkbox" type="checkbox"> {{task.title}} </h3>
-      <p>Created: {{ task.created }}
+      <div>
+        <input class="task-checkbox" type="checkbox" ng-click="archive.taskStatus(task)">
+        <h3 class="archive-title">{{ task.title }}</h3>
+      </div>
+      <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
       <p class="task-description">Description: {{ task.description }}</p>
       <hr class="task-rules">
     </div>
