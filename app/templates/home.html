@@ -1,27 +1,28 @@
-<nav class="nav-bar">
-  <h5>Active Tasks | Finished Tasks</h5>
-</nav>
-
 <section class="hero-content">
-  <h1 class="hero-title">Active Tasks</h1>
+  <h1 class="hero-title">Current Tasks</h1>
 </section>
 
 <section class="new-task">
-  <div class="new-task-header">
-    Task Name | Description |Priority
-  </div>
-  <div class="new-task-field" ng-submit="home.addTask()">
-    <input type="text" class="task-field" ng-model="task.title" name="title" value="Your New Task Title">
-    <input type="text" class="tesk-field" ng-model="task.description" value="Your New Task Description">
-    <input type="submit" class="submit" value="Add Task">
+  <div class="new-task-field">
+    <input type="text" class="task-field" ng-model="messageTitle" placeholder="Your New Task Title">
+    <input type="text" class="task-field" ng-model="messageDescription" placeholder="Your New Task Description">
+    <select class="priority" ng-model="taskPriority">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <button class="submit" ng-click="home.addTask(messageTitle, messageDescription, taskPriority); clearfunction(this)">Add Task</button>
   </div>
 </section>
 
 <section class="task-content">
-  <div class="task-list" ng-repeat="task in home.tasks">
-    <div ng-show="home.show(task)">
-      <h3><input class="task-checkbox" type="checkbox"> {{ task.title }}</h3>
-      <p>Created: {{ task.created }}
+  <div class="task-list" ng-repeat="task in home.tasks | orderBy: 'priority'">
+    <div ng-hide="home.hide(task)">
+      <div>
+        <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">
+        <h3 class="task-title">{{ task.title }}</h3>
+      </div>
+      <p class="task-priority">Priority: {{ task.priority }} | Created: {{ task.created }}</p>
       <p class="task-description">Description: {{ task.description }}</p>
       <hr class="task-rules">
     </div>
