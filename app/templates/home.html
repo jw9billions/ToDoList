@@ -17,6 +17,7 @@
 
 <section class="task-content">
   <div class="task-list" ng-repeat="task in home.tasks | orderBy: 'priority'">
+    
     <div ng-hide="home.hide(task)">
       <div>
         <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">

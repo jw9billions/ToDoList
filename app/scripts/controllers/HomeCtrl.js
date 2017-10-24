@@ -5,6 +5,7 @@
         Task.completeTask(task);
       }
 
+
       this.hide = function(task) {
         return task.created < (moment().dayOfYear() - 7) || task.completed == true
       };
