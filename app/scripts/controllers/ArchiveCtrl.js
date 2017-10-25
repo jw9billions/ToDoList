@@ -1,11 +1,11 @@
 (function(){
-  
+
   function ArchiveCtrl(Task, $scope) {
     this.tasks = Task.all;
+    
     this.taskStatus = function (task) {
       Task.incompleteTask(task);
     };
-
 
     this.show = function(task) {
       return task.created > (moment().dayOfYear()-7) && task.completed == false

@@ -19,6 +19,7 @@
 <section class="task-content">
   <div class="task-list" ng-repeat="task in archive.tasks | orderBy: 'priority'">
     <div ng-hide="archive.hide(task)">
+      
       <div>
         <input class="task-checkbox" type="checkbox" ng-click="archive.taskStatus(task)">
         <h3 class="archive-title">{{ task.title }}</h3>
