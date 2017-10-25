@@ -19,6 +19,7 @@
       return new Date(date.setDate(day)); // add the number of days
     }
 
+
     return {
       all: tasks,
       addTask: function(newTask) {

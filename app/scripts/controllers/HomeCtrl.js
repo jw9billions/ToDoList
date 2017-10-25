@@ -10,6 +10,7 @@
         return task.created < (moment().dayOfYear() - 7) || task.completed == true
       };
 
+
       this.addTask = function (messageTitle, messageDescription, taskPriority) {
         if (messageTitle) {
           var newTask = {
