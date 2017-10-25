@@ -5,11 +5,11 @@
 
     var confirmedCompleted = function (task) {
                                   task.completed = true;
-                                  task.$save(task)
+                                  tasks.$save(task)
                               };
     var confirmedIncompleted = function (task) {
                                   task.completed = false;
-                                  task.$save(task)
+                                  tasks.$save(task)
                               };
 
     var dayOfYearToDate = function dateFromDay(day){

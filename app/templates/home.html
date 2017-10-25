@@ -17,9 +17,10 @@
 
 <section class="task-content">
   <div class="task-list" ng-repeat="task in home.tasks | orderBy: 'priority'">
-    
+
     <div ng-hide="home.hide(task)">
       <div>
+        Hide:
         <input class="task-checkbox" type="checkbox" ng-click="home.taskStatus(task)">
         <h3 class="task-title">{{ task.title }}</h3>
       </div>

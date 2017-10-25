@@ -13,6 +13,7 @@
                 templateUrl: '/templates/home.html'
             })
 
+
             .state('archive', {
                 url: '/archive',
                 controller: 'ArchiveCtrl as archive',

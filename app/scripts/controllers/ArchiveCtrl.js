@@ -1,4 +1,5 @@
 (function(){
+  
   function ArchiveCtrl(Task, $scope) {
     this.tasks = Task.all;
     this.taskStatus = function (task) {
