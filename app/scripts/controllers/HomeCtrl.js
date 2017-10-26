@@ -1,11 +1,9 @@
 (function() {
     function HomeCtrl(Task, $scope) {
       this.tasks = Task.all;
-
       this.taskStatus = function (task) {
         Task.completeTask(task);
       }
-
 
       this.hide = function(task) {
         return task.created < (moment().dayOfYear() - 7) || task.completed == true
