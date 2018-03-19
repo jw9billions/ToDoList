@@ -2,4 +2,4 @@ It is a demo of Frontend web development. It is a task manager with a list of ta
 
 Tools: HTML, CSS, JS, NodeJS, Angular, Firebase
 
-To learn more, please visit https://github.com/jw9billions/ToDoList
+To learn more, please visit https://porter-tapir-33641.netlify.com/
